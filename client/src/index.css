@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    direction: rtl;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-cairo antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    @apply bg-gradient-to-l from-[#0C7D99] to-[#00A896] text-white;
+  }
+
+  .gradient-secondary {
+    @apply bg-gradient-to-r from-[#00A896] to-[#05668D] text-white;
+  }
+
+  .gradient-blue-green {
+    @apply bg-gradient-to-br from-[#05668D] via-[#0C7D99] to-[#00A896] text-white;
+  }
+
+  .gradient-green-blue {
+    @apply bg-gradient-to-tl from-[#00A896] via-[#028090] to-[#05668D] text-white;
+  }
+
+  .gradient-hero {
+    @apply bg-gradient-to-br from-[#05668D]/90 via-[#0C7D99]/80 to-[#00A896]/70;
+  }
+
+  .gradient-card {
+    @apply bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900;
+  }
+
+  .gradient-card-hover {
+    @apply bg-gradient-to-br from-[#0C7D99]/5 to-[#00A896]/10 hover:from-[#0C7D99]/10 hover:to-[#00A896]/20 transition-all duration-300;
+  }
+
+  .border-gradient {
+    @apply border-2 border-transparent bg-clip-padding;
+    background-image: linear-gradient(to right, white, white), 
+                      linear-gradient(to right, #0C7D99, #00A896);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#05668D] to-[#00A896];
+  }
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+}
